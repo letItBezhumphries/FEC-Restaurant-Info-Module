@@ -14,9 +14,8 @@
     ]
   },
   "scripts": {
-    "start": "npm-run-all --parallel start-dev build-dev",
-    "start-dev": "node ./server/server.js --w",
-    "build-dev": "webpack --config webpack.config.js --watch"
+    "start": "node ./server/server.js --w",
+    "build": "webpack --config webpack.config.js"
   },
   "keywords": [],
   "license": "ISC",
