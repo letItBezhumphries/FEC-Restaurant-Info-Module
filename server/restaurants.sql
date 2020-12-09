@@ -1,3 +1,6 @@
+CREATE USER 'brokentable'@'%' IDENTIFIED BY 'password';
+GRANT SELECT,INSERT,UPDATE,DELETE,DROP ON restaurant_details.* TO 'brokentable'@'%';
+
 CREATE DATABASE IF NOT EXISTS restaurant_details;
 
 USE restaurant_details;
