@@ -1,33 +1,40 @@
-require('dotenv').config()
+require("dotenv").config();
 const express = require("express");
 const http = require("http");
 const createError = require("http-errors");
 const path = require("path");
 const mysql = require("mysql");
 const errorHandler = require("errorhandler");
-const bodyParser = require("body-parser");
+const DIST_DIR = path.join(__dirname, "../public/dist");
 const db = require("./db");
 
 const app = express();
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("dist"));
+app.use(
+  express.json({
+    extended: false,
+  })
+);
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
+app.use(express.static(DIST_DIR));
+
+// const connection = mysql.createConnection({
+//   host: process.env.RDS_HOST,
+//   port: process.env.RDS_PORT,
+//   user: process.env.RDS_USERNAME,
+//   password: process.env.RDS_PASSWORD,
+//   database: process.env.DB_NAME,
+// });
+
 const connection = mysql.createConnection({
-  host: process.env.RDS_HOST,
-  port: process.env.RDS_PORT,
-  user: process.env.RDS_USERNAME,
-  password: process.env.RDS_PASSWORD,
-  database: process.env.DB_NAME,
+  host: "localhost",
+  user: "eric",
+  password: "chalon",
+  database: "restaurant_details",
 });
 
 connection.connect((err) => {
@@ -89,7 +96,8 @@ app.get("/wild", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../src/client/index.html"));
+  console.log("dist dir:", path.resolve(DIST_DIR, "index.html"));
+  res.sendFile(path.resolve(DIST_DIR, "index.html"));
 });
 
 app.set("view engine", "pug");
@@ -119,4 +127,3 @@ server.listen(app.get("port"), () => {
 });
 
 module.exports = app;
-
