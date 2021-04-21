@@ -26,11 +26,12 @@ const navlinkActiveStyles = {
   display: "flex", 
   flexDirection: "column",
   color: "red",
+  textDecoration: "none",
   borderBottom: "1.15px solid",
   borderBottomColor: "red",
 }
 
-const Tab = ({ label, activeTab, onClick }) => {
+const Tab = ({ label, activeTab, onClick, href }) => {
   const [tabLinkStyles, setTabLinkStyles] = useState(navlinkStyles);
 
   const onTabClick = () => {
@@ -45,11 +46,13 @@ const Tab = ({ label, activeTab, onClick }) => {
     }
   }, [activeTab, label]);
 
+  console.log('href:', href);
+
   return (
     <>
-      <li className="nav-link" href={ label === "Overview" ? "/" : `#${label}`} style={tabLinkStyles} onClick={onTabClick}>
+      <a className="nav-link" href={href} style={tabLinkStyles} onClick={onTabClick}>
         {label}
-      </li>
+      </a>
     </>
   );
 };

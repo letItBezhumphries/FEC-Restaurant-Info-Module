@@ -13,6 +13,8 @@ import Reviews from './reviews.jsx';
 import Description from './description.jsx';
 import TitleHeading from './titleHeading.jsx';
 import TagsSubheading from './tagsSubheading.jsx';
+import Reservations from './reservations.jsx';
+import Orders from './orders.jsx';
 const axios = require("axios");
 
 class Eatery extends Component {
@@ -180,6 +182,7 @@ class Eatery extends Component {
     };
 
     const restaurantPageStyles = {
+      // backgroundColor: "red",
       width: "50%",
       flex: "1 1 50%",
       marginLeft: "75px",
@@ -199,13 +202,13 @@ class Eatery extends Component {
         <Container style={mainPageStyles} fluid="true">
           <Container style={restaurantPageStyles}>
             <Tabs>
-              <div label="Overview">Overview</div>
-              <div label="Photos">Photos</div>
-              <div label="Popular dishes">Popular dishes</div>
-              <div label="Menu">Menu</div>
-              <div label="Reviews">Reviews</div>   
+              <div label="Overview" href="#overview" eventKey="1">Overview</div>
+              <div label="Photos" href="#photos" eventKey="2">Photos</div>
+              <div label="Popular dishes" href="#popular" eventKey="3">Popular dishes</div>
+              <div label="Menu" href="#menu" eventKey="4">Menu</div>
+              <div label="Reviews" href="#reviews" eventKey="5">Reviews</div>   
             </Tabs>
-            <Container fluid="true">
+            <Container fluid="true" data-bs-spy="scroll" data-bs-target="#restaurant-page-nav" data-bs-offset="0" tabIndex="0">
               <Container style={{ margin: "10px 8px 16px 8px" }} fluid="true">
                 <TitleHeading name={this.state.name} />
                 <DetailsSub rev={this.state.reviewNum} starz={this.state.starAvg} tagz={this.state.tags} cuisine={this.state.cuisine} />
@@ -214,12 +217,20 @@ class Eatery extends Component {
               <Description description={this.state.description} />
               <PhotoBase />
               <Popular />
-              <MenuSection menu1={this.state.menuOne} menu2={this.state.menuTwo} menu3={this.state.menuThree} menu4={this.state.menuFour} menu5={this.state.menuFive} />
+              <MenuSection 
+                menu1={this.state.menuOne} 
+                menu2={this.state.menuTwo} 
+                menu3={this.state.menuThree} 
+                menu4={this.state.menuFour} 
+                menu5={this.state.menuFive}   
+                />
               <Reviews />
             </Container>
           </Container>
 
           <Container style={venueColumnStyles}>
+            <Reservations />
+            <Orders />
             <VenueDetails {...minutiae} />
           </Container>
         </Container>

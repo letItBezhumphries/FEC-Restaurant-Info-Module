@@ -13,6 +13,7 @@ const TitleHeading = ({ name }) => {
               fontWeight: "700", 
               textOverflow: "ellipsis" 
             }}
+            id="overview"
         >
           {name}
         </h1>           

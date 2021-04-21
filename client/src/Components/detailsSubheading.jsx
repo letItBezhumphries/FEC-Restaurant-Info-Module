@@ -64,7 +64,7 @@ function DetailsSub({ rev, starz, fare, cuisine }) {
           <div style={textStyles}>
             <Utensils style={{ height: "16px", width: "16px", fill: "black" }} />
             <div style={{ textAlign: "center", display: "flex", alignItems: "center"}}>
-              <div style={{ marginLeft: "6px", alignSelf: "center"}}>
+              <div style={{ marginLeft: "6px", alignSelf: "center", paddingTop: "2px"}}>
                 { cuisine }
               </div>
             </div>

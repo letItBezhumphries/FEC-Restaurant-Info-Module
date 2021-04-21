@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import Col from "react-bootstrap/Col";
-// import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Provided from "../assets/provided_by.png";
 import MenuNav from "./menuNav.jsx";
@@ -18,10 +17,11 @@ const MenuSection = (props) => {
   const filteredMenus = filterMenus(props);
 
   const sectionHeadingStyles = {
+    display: "flex",
     fontSize: "24px",
     lineHeight: "32px",
     fontWeight: "700",
-    paddingBottom: "16px",
+    padding: "0 0 16px 0",
     marginBottom: "16px",
     borderBottom: "1.1111px solid rgb(216, 217, 219)",
   };
@@ -37,7 +37,7 @@ const MenuSection = (props) => {
   return (
     <Fragment>
       <Container style={sectionHeadingStyles}>
-        <h2>Menu</h2>
+        <h2 id="menu">Menu</h2>
       </Container>
       <Container style={{ width: "100%", paddingTop: "8px" }} fluid="true">
         <MenuNav menus={filteredMenus} />

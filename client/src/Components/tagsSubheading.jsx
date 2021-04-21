@@ -8,8 +8,6 @@ const TagsSubheading = ({ tagz, fare }) => {
   console.log('inside TagSubheading, tagz:', tagz);
   
   const tagRowStyles = {
-    // backgroundColor: "green",
-    // height: "33px",
     marginTop: "16px",
     margin: "auto 0", 
     display: "flex", 
@@ -17,7 +15,6 @@ const TagsSubheading = ({ tagz, fare }) => {
 
   
   const buttonToolbarStyles = {
-    // backgroundColor: "purple",
     marginLeft: "10px",
     flex: "1 1 70%",
     display: "flex",

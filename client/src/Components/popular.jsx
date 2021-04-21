@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import Radium from 'radium';
+import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-
 
 const Popular = () => {
   const sectionStyles = {
@@ -84,9 +84,9 @@ const Popular = () => {
 ];
 
   return (
-    <Fragment>
+    <Container>
       <Row style={sectionStyles}>
-        <h2>Popular dishes</h2>
+        <h2 id="popular">Popular dishes</h2>
       </Row>
 
       <Row style={popularStyles}>
@@ -104,7 +104,7 @@ const Popular = () => {
           </div>
         })}
       </Row>
-    </Fragment>
+    </Container>
   )
 }
 

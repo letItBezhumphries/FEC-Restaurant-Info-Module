@@ -10,6 +10,7 @@ import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import Button from "react-bootstrap/Button";
 import Logo from "../assets/logo.png";
 import Icon from "../assets/search.jpg";
+import Location from "../assets/SVG/map-pin.svg";
 
 function Heading() {
   return (
@@ -51,9 +52,12 @@ function Heading() {
         </Dropdown>
       </Nav>
       <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="#home" style={{ borderRightStyle: "solid", borderRightColor: "rgb(216, 217, 219)", borderRightWidth: "1.1111px", paddingRight: "8px" }}>
           <img src={Logo} width="250" alt="" />
         </Navbar.Brand>
+        <div style={{ height: "1fr", width: "1fr", }}>
+          <Location style={{ height: "24px", width: "24px", fill: "rgba(0,0,0,.12)"}} />
+        </div>
         <NavDropdown title="Title Placeholder" id="basic-nav-dropdown" className="mr-auto p-2">
           <NavDropdown.Item>Metro</NavDropdown.Item>
           <NavDropdown.Item href="/">Atlanta / Georgia</NavDropdown.Item>

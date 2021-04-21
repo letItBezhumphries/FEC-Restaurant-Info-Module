@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Radium from 'radium';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import MenuNavLinks from "./menuNavLinks.jsx";
 import Menu from './menu.jsx';
@@ -45,8 +44,6 @@ const MenuNav = ({ menus }) => {
     padding: "0px 0px 4px 0px",
   }
 
-
-
   const menuTypes = ["Dinner", "Lunch", "Appetizers", "Entrees", "Deserts"];
   const menuLinks = menuTypes.slice(0, menus.length - 1).map((menuType, idx) => {
     return <div label={menuType} key={idx}>{menuType}</div>
@@ -70,7 +67,7 @@ const MenuNav = ({ menus }) => {
           { menuSelection }
         </Tab.Content>
         <div style={{ width: "100%", textAlign: "center" }}>
-         <Button style={viewMenuButtonStyle} size="lg">View full menu</Button>
+          <button style={viewMenuButtonStyle} size="lg">View full menu</button>
         </div>
       </Container>
     </Tab.Container>

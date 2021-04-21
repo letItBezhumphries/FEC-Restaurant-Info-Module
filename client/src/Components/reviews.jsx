@@ -8,5 +8,5 @@ export default() => {
     mountReviewsModule(ref.current);
   }, []);
 
-  return <div ref={ref}></div>
+  return <div ref={ref} id="reviews"></div>
 }

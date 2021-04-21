@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import Tab from './tab.jsx';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import { event } from 'jquery';
 
 const navbarStyle = { 
+  position: "sticky",
+  top: "40px",
+  zIndex: "1003",
   height: "50px", 
   backgroundColor: "white", 
   paddingBottom: "0px", 
@@ -32,10 +36,10 @@ const Tabs = ({ onTabClick, children }) => {
 
   return (
     <Navbar style={navbarStyle}>
-      <Nav style={navStyle}>
-        {children.map((child) => {
-          const { label } = child.props;
-          return <Tab activeTab={activeTab} key={label} label={label} onClick={onClickTabItem} />;
+      <Nav style={navStyle} id="restaurant-page-nav">
+        {children.map((child, idx) => {
+          const { label, href, eventKey } = child.props;
+          return <Tab key={idx} activeTab={activeTab} eventKey={eventKey} label={label} href={href} onClick={onClickTabItem} />;
         })}
         <div className="tab-content">
           {children.map((child) => {

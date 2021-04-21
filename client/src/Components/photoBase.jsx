@@ -9,5 +9,5 @@ export default() => {
     mountPhotoGallery(ref.current);
   }, []);
 
-  return <div ref={ref}></div>
+  return <div ref={ref} id="photos"></div>
 };
