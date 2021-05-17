@@ -12,7 +12,7 @@ import Logo from "../assets/logo.png";
 import Icon from "../assets/search.jpg";
 import Location from "../assets/SVG/map-pin.svg";
 
-function Heading() {
+const Heading = () => {
   return (
     <Container fluid="true">
       <Nav

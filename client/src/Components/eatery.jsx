@@ -49,8 +49,23 @@ class Eatery extends Component {
       starAvg: 0,
       tags: [],
       cost: "$30 and under",
+      // latitude: null,
+      // longitude: null,
+      // errorMessage: "",
     };
   }
+
+  // componentDidMount() {
+  //   window.navigator.geolocation.getCurrentPosition(
+  //     position => this.setState({ 
+  //       latitude: position.coords.latitude,
+  //       longitude: position.coords.longitude
+  //     }),
+  //     err => this.setState({
+  //       errorMessage: err.message
+  //     }) 
+  //   );
+  // }
 
   componentDidMount() {
     axios
@@ -94,7 +109,7 @@ class Eatery extends Component {
           })
       )
       .then((res) => {
-        console.log('reviews api response:', res.data);
+        // console.log('reviews api response:', res.data);
         var totalRev = res.data.length;
         var revText = "";
         if (totalRev === 0) {
@@ -182,7 +197,6 @@ class Eatery extends Component {
     };
 
     const restaurantPageStyles = {
-      // backgroundColor: "red",
       width: "50%",
       flex: "1 1 50%",
       marginLeft: "75px",
@@ -194,9 +208,11 @@ class Eatery extends Component {
       marginRight: "75px",
     };
 
+    // console.log('latitude:', this.state.latitude, 'longitude:', this.state.longitude);
 
     return (
       <Container fluid="true">
+        {/* { this.state.longitude && this.state.latitude ? <Heading long={this.state.longitude} lat={this.state.latitude} /> : null } */}
         <Heading />
         <PhotoHeading className="position-relative"/>
         <Container style={mainPageStyles} fluid="true">

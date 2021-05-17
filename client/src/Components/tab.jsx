@@ -46,8 +46,6 @@ const Tab = ({ label, activeTab, onClick, href }) => {
     }
   }, [activeTab, label]);
 
-  console.log('href:', href);
-
   return (
     <>
       <a className="nav-link" href={href} style={tabLinkStyles} onClick={onTabClick}>

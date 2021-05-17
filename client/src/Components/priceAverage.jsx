@@ -2,8 +2,7 @@ import React from 'react';
 import Price from "../assets/priceicon.png";
 
 const PriceAverage = ({ fare, cost }) => {
-  console.log('this is the fare:', cost);
-
+  
   const getRandomPrice = () => {
     return Math.floor(Math.random() * (60 - 15) + 15);
   }

@@ -15,6 +15,8 @@ const ALL_FILES = glob.sync(path.join(__dirname, "client/src/*.js"));
 const packageJson = require('./package.json');
 const TerserPlugin = require('terser-webpack-plugin');
 
+const domain = process.env.PRODUCTION_DOMAIN
+
 const prodConfig = {
   mode: "production",
   devtool: {
@@ -23,7 +25,8 @@ const prodConfig = {
   output: {
     filename: "main.[contenthash].js",
     path: DIST_DIR,
-    publicPath: "http://localhost:3001/",
+    // publicPath: "http://localhost:3001/",
+    publicPath: "/restaurant/latest/",
     assetModuleFilename: "assets/[name][contenthash][ext]",
   },
   module: {
@@ -76,17 +79,17 @@ const prodConfig = {
       title: "Restaurant Info Page"
     }),
     new Dotenv({
-      path: "./.env.development",
+      path: "./.env",
       allowEmptyValues: true,
     }),
     new ESLintPlugin({
       fix: true,
     }),
     new ModuleFederationPlugin({
-      name: "RestaurantInfoApp",
+      name: "restaurant",
       remotes: {
-        photogallery: "photogallery@http://localhost:3003/remoteEntry.js",
-        reviews: "reviews@http://localhost:1337/remoteEntry.js",
+        photogallery: `photogallery@${domain}/photogallery/latest/remoteEntry.js`,
+        reviews: `reviews@${domain}/reviews/latest/remoteEntry.js`,
       },
       shared: packageJson.dependencies
     }),

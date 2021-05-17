@@ -4,8 +4,7 @@ import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import Button from 'react-bootstrap/Button';
 import Radium from 'radium';
 
-const TagsSubheading = ({ tagz, fare }) => {
-  console.log('inside TagSubheading, tagz:', tagz);
+const TagsSubheading = ({ tagz }) => {
   
   const tagRowStyles = {
     marginTop: "16px",

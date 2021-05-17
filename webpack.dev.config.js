@@ -71,7 +71,7 @@ const devConfig = {
       title: "Restaurant Info Page"
     }),
     new Dotenv({
-      path: "./.env.development",
+      path: "./.env",
       allowEmptyValues: true,
     }),
     new ESLintPlugin({
