@@ -22,20 +22,20 @@ app.use((req, res, next) => {
 
 app.use(express.static(DIST_DIR));
 
-// const connection = mysql.createConnection({
-//   host: process.env.RDS_HOST,
-//   port: process.env.RDS_PORT,
-//   user: process.env.RDS_USERNAME,
-//   password: process.env.RDS_PASSWORD,
-//   database: process.env.DB_NAME,
-// });
-
 const connection = mysql.createConnection({
-  host: "localhost",
-  user: "eric",
-  password: "chalon",
-  database: "restaurant_details",
+  host: process.env.RDS_HOST,
+  port: process.env.RDS_PORT,
+  user: process.env.RDS_USERNAME,
+  password: process.env.RDS_PASSWORD,
+  database: process.env.DB_NAME,
 });
+
+// const connection = mysql.createConnection({
+//   host: "localhost",
+//   user: "eric",
+//   password: "chalon",
+//   database: "restaurant_details",
+// });
 
 connection.connect((err) => {
   if (err) throw err;

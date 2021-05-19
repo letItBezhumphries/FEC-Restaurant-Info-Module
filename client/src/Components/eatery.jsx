@@ -68,8 +68,10 @@ class Eatery extends Component {
   // }
 
   componentDidMount() {
+    //need to fix this check if process.env === 'development' domain = process.env.DEV_RESTAURANT_URL
+    // otherwise process.env is in production so domain = process.env.PROD_RESTAURANT_URL
     axios
-      .get(process.env.DEV_RESTAURANT_URL, { crossdomain: true })
+      .get(process.env.PROD_RESTAURANT_URL, { crossdomain: true })
       .then((res) => {
         // console.log('in EATERY:', res.data);
         var restaurantID = res.data.ID;
@@ -104,7 +106,7 @@ class Eatery extends Component {
       })
       .then(
         (restaurantID) =>
-          axios.get(process.env.DEV_REVIEWS_URL + restaurantID + '/reviews', {
+          axios.get(process.env.PROD_REVIEWS_URL + restaurantID + '/reviews', {
             crossdomain: true,
           })
       )
