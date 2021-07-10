@@ -1,0 +1,57 @@
+.metrolist-selection {
+  /* display: flex; */
+  display: list-item;
+  cursor: default;
+  color: rgb(51,51,51);
+  font-size: 1.4rem;
+  padding: 0 0;
+  margin: 0 0;
+  list-style-position: outside;
+  list-style-image: none;
+  list-style-type: none;
+  width: 30rem;
+  border-left: 3px solid transparent;
+  overflow: hidden;
+}
+
+.metrolist-selection:hover {
+  border-left: 3px solid #237b98;
+  background: #eef4fb;
+  color: #237b98 !important;
+  cursor: pointer;
+}
+
+.metrolist-active {
+  display: list-item;
+  cursor: default;
+  font-size: 1.4rem;
+  padding: 0 0;
+  margin: 0 0;
+  list-style-position: outside;
+  list-style-image: none;
+  list-style-type: none;
+  width: 30rem;
+  overflow: hidden;
+  border-left: 3px solid #237b98;
+  background: #eef4fb;
+  color: #237b98 !important;
+}
+
+.selection-container {
+  padding: 0 1rem 0 1rem;
+  margin: 0 0;
+  border-right: 1px solid rgba(0,0,0,.12);
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.metro-title {
+  display: flex;
+  align-items: center;
+}
+
+.metro-icon-box {
+  display: flex;
+  align-items: center;
+}

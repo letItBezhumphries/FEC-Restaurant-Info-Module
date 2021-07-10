@@ -1,5 +1,5 @@
 import React from 'react';
-import Price from "../assets/priceicon.png";
+import Price from "../../../assets/priceicon.png";
 
 const PriceAverage = ({ fare, cost }) => {
   

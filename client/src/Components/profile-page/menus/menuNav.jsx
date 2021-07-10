@@ -3,8 +3,8 @@ import Radium from 'radium';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 import Container from 'react-bootstrap/Container';
-import MenuNavLinks from "./menuNavLinks.jsx";
-import Menu from './menu.jsx';
+import MenuNavLinks from "./menuNavLinks";
+import Menu from './menu';
 
 const MenuNav = ({ menus }) => {
   const [activeKey] = useState("Dinner");

@@ -3,9 +3,8 @@ import Row from 'react-bootstrap/Row';
 
 const TitleHeading = ({ name }) => {
   return (
-    <Fragment>
-      <Row>
-        <h1 className="pl-4 mt-4 mb-4" 
+    <Row style={{ paddingBottom: "2rem", borderBottom: "1px solid #d8d9db", marginBottom: "1.6rem" }}>
+        <h1 
             style={{ 
               fontSize: "48px", 
               color: "rgb(45, 51, 63)", 
@@ -13,14 +12,11 @@ const TitleHeading = ({ name }) => {
               fontWeight: "700", 
               textOverflow: "ellipsis" 
             }}
-            id="overview"
         >
           {name}
         </h1>           
-      </Row>
-      <hr style={{ marginBottom: "16px", color: "rgb(216, 217, 219)" }} />
-    </Fragment>
-  )
+    </Row>
+  );
 }
 
 export default TitleHeading;

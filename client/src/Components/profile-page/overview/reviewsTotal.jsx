@@ -1,5 +1,5 @@
 import React from "react";
-import Comment from "../assets/SVG/chat.svg";
+import Comment from "../../../assets/SVG/chat.svg";
 
 const reviewsContainerStyles = {
   display: "flex",
@@ -29,8 +29,7 @@ const textStyles = {
 };
 
 
-const ReviewsTotal = ({ revsText }) => {
-
+const ReviewsTotal = ({ total }) => {  
   return ( 
     <div style={{ display: "block", marginRight: "4px"}}>
       <div style={reviewsContainerStyles}>
@@ -38,7 +37,7 @@ const ReviewsTotal = ({ revsText }) => {
           <Comment style={iconStyles}/>
         </div>
         <div style={textStyles}>
-          <span>{revsText}</span>
+          <span>{total}</span>
         </div>
       </div>
     </div>

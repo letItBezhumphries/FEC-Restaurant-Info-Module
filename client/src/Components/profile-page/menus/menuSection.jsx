@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Provided from "../assets/provided_by.png";
-import MenuNav from "./menuNav.jsx";
+import Provided from "../../../assets/provided_by.png";
+import MenuNav from "./menuNav";
 
 const MenuSection = (props) => {
 
@@ -17,14 +17,18 @@ const MenuSection = (props) => {
   const filteredMenus = filterMenus(props);
 
   const sectionHeadingStyles = {
+    width: "100%",
     display: "flex",
-    fontSize: "24px",
-    lineHeight: "32px",
-    fontWeight: "700",
     padding: "0 0 16px 0",
     marginBottom: "16px",
     borderBottom: "1.1111px solid rgb(216, 217, 219)",
   };
+
+  const headingStyles = {
+    fontSize: "24px",
+    lineHeight: "32px",
+    fontWeight: "700",
+  }
 
   const menuFooterStyles = { 
     width: "100%", 
@@ -34,10 +38,18 @@ const MenuSection = (props) => {
     margin: "16px 0px" 
   };
 
+  const menuSectionStyles = {
+    width: "100%",
+    padding: "0 0",
+    margin: "0 0",
+    // backgroundColor: "lavender"
+  }
+
+
   return (
-    <Fragment>
+    <Container fluid="true" style={menuSectionStyles} id="menu">
       <Container style={sectionHeadingStyles}>
-        <h2 id="menu">Menu</h2>
+        <h2 style={headingStyles}>Menu</h2>
       </Container>
       <Container style={{ width: "100%", paddingTop: "8px" }} fluid="true">
         <MenuNav menus={filteredMenus} />
@@ -50,7 +62,7 @@ const MenuSection = (props) => {
           </Col>
         </Container>
       </Container>
-    </Fragment>
+    </Container>
   );
 }
 

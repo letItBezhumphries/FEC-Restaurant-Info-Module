@@ -3,7 +3,7 @@ var DIST_DIR = path.join(__dirname, "/public/dist");
 const { merge } = require('webpack-merge');
 const commonConfig = require('./webpack.common');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin"); //to clean out dist folder
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const Dotenv = require("dotenv-webpack");
 const ESLintPlugin = require("eslint-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
@@ -14,23 +14,26 @@ const devConfig = {
   output: {
     filename: "main.js",
     path: DIST_DIR,
-    publicPath: "http://localhost:3001/",
+    publicPath: "http://127.0.0.1:9000/",
     assetModuleFilename: "assets/[name][ext]",
   },
   devtool: "inline-source-map",
   devServer: {
     // hot: true,
     host: "127.0.0.1",
-    allowedHosts: ["http://localhost:3000/", "http://localhost:3003/", "http://localhost:1337/"],
-    open: true,
+    // open: true,
     contentBase: path.join(__dirname, "public/dist"),
     index: "index.html",
     writeToDisk: true,
     compress: true,
-    port: 3001,
+    port: 9000,
     historyApiFallback: {
       index: "index.html",
     },
+    proxy: {
+      "/": "http://127.0.0.1:3001/",
+      "/wild": "http://127.0.0.1:3001/wild"
+    }
   },
   module: {
     rules: [
@@ -43,7 +46,7 @@ const devConfig = {
       {
         test: /\.css$/,
         use: [
-          "style-loader", 
+          MiniCssExtractPlugin.loader, 
           "css-loader", 
           { 
             loader: "postcss-loader",
@@ -57,7 +60,7 @@ const devConfig = {
       },
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
     ],
   },
@@ -65,10 +68,8 @@ const devConfig = {
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: ["**/*"],
     }),
-    new HtmlWebpackPlugin({
-      template: "./public/index.html",
-      filename: "index.html",
-      title: "Restaurant Info Page"
+    new MiniCssExtractPlugin({
+      filename: 'styles.css'
     }),
     new Dotenv({
       path: "./.env",
@@ -80,8 +81,8 @@ const devConfig = {
     new ModuleFederationPlugin({
       name: "RestaurantInfoApp",
       remotes: {
-        photogallery: "photogallery@http://localhost:3003/remoteEntry.js",
-        reviews: "reviews@http://localhost:1337/remoteEntry.js",
+        photogallery: "photogallery@http://127.0.0.1:9001/remoteEntry.js",
+        reviews: "reviews@http://127.0.0.1:9002/remoteEntry.js",
       },
       shared: packageJson.dependencies
     })

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import MenuNavLink from "./menuNavLink.jsx";
+import MenuNavLink from "./menuNavLink";
 import Nav from 'react-bootstrap/Nav';
 
 const MenuNavLinks = ({ children }) => {

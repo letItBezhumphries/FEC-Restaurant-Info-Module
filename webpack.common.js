@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 var SRC_DIR = path.join(__dirname, "/client/src");
 
 module.exports = {
@@ -13,7 +14,7 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-react", "@babel/preset-env"],
-            plugins: ["@babel/plugin-transform-runtime", "@babel/plugin-proposal-class-properties"],
+            plugins: ["@babel/plugin-transform-runtime"],
           },
         },
       },
@@ -31,4 +32,14 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: ["*", ".js", ".jsx"],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+      title: "Restaurant Info Page",
+      inject: "body"
+    }),
+  ]
 };

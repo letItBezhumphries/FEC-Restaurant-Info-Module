@@ -3,22 +3,22 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
-import StreetIcon from "../assets/SVG/add_road.svg";
-import NeighborhoodIcon from "../assets/SVG/office.svg";
-import ClockIcon from "../assets/SVG/clock.svg";
-import CuisineIcon from "../assets/SVG/restaurant.svg";
-import StyleIcon from "../assets/SVG/room_service.svg";
-import DressIcon from "../assets/icons8-wedding-dress-16.png";
-import ParkIcon from "../assets/SVG/local_parking.svg";
-import TransitIcon from "../assets/SVG/directions_train.svg";
-import PaymentIcon from "../assets/SVG/credit_card.svg";
-import ChefIcon from "../assets/icons8-chef-hat-16.png";
-import SpecialIcon from "../assets/SVG/tag.svg";
-import UrlIcon from "../assets/SVG/external-link.svg";
-import PhoneIcon from "../assets/SVG/phone.svg";
-import DetailsIcon from "../assets/SVG/brunch_dining.svg";
-import PartiesIcon from "../assets/SVG/beverage.svg";
-import PartyContactIcon from "../assets/SVG/local_bar.svg";
+import StreetIcon from "../../../assets/SVG/add_road.svg";
+import NeighborhoodIcon from "../../../assets/SVG/office.svg";
+import ClockIcon from "../../../assets/SVG/clock.svg";
+import CuisineIcon from "../../../assets/SVG/restaurant.svg";
+import StyleIcon from "../../../assets/SVG/room_service.svg";
+import DressIcon from "../../../assets/icons8-wedding-dress-16.png";
+import ParkIcon from "../../../assets/SVG/local_parking.svg";
+import TransitIcon from "../../../assets/SVG/directions_train.svg";
+import PaymentIcon from "../../../assets/SVG/credit_card.svg";
+import ChefIcon from "../../../assets/icons8-chef-hat-16.png";
+import SpecialIcon from "../../../assets/SVG/tag.svg";
+import UrlIcon from "../../../assets/SVG/external-link.svg";
+import PhoneIcon from "../../../assets/SVG/phone.svg";
+import DetailsIcon from "../../../assets/SVG/brunch_dining.svg";
+import PartiesIcon from "../../../assets/SVG/beverage.svg";
+import PartyContactIcon from "../../../assets/SVG/local_bar.svg";
 
 function VenueDetails({
   cross_street,

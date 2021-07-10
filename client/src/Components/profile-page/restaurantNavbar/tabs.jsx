@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Tab from './tab.jsx';
+import Tab from './tab';
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
@@ -30,6 +30,7 @@ const Tabs = ({ onTabClick, children }) => {
   const [activeTab, setActiveTab] = useState(children[0].props.label);
 
   const onClickTabItem = (tab) => {
+    console.log('this is the activeTab:', tab);
     setActiveTab(tab);
   };
 

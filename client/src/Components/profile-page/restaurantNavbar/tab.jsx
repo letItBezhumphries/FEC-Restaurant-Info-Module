@@ -38,6 +38,8 @@ const Tab = ({ label, activeTab, onClick, href }) => {
     onClick(label);
   };
 
+  console.log('this is the activeTab:', activeTab, "label:", label);
+
   useEffect(() => {
     if (activeTab === label) {
       setTabLinkStyles(navlinkActiveStyles)

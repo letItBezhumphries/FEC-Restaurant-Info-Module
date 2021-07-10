@@ -3,7 +3,7 @@ import Radium from 'radium';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import UpwardIcon from '../assets/SVG/line-chart.svg';
+import UpwardIcon from '../../../assets/SVG/line-chart.svg';
 
 const cardStyles = { 
   position: "sticky",

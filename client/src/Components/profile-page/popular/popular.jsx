@@ -7,10 +7,14 @@ const Popular = () => {
   const sectionStyles = {
     paddingBottom: "16px",
     marginBottom: "16px",
+    borderBottom: "1.1111px solid rgb(216, 217, 219)",
+  }
+
+  const sectionHeadingStyles = {
     fontSize: "24px",
     lineHeight: "32px",
     fontWeight: "700",
-    borderBottom: "1.1111px solid rgb(216, 217, 219)",
+    color: "#2d333f",
   }
 
   const popularStyles = {
@@ -84,9 +88,9 @@ const Popular = () => {
 ];
 
   return (
-    <Container>
+    <Container style={{ marginTop: "1.6rem" }}>
       <Row style={sectionStyles}>
-        <h2 id="popular">Popular dishes</h2>
+        <h2 id="popular" style={sectionHeadingStyles}>Popular dishes</h2>
       </Row>
 
       <Row style={popularStyles}>
