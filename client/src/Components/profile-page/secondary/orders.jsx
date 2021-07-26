@@ -1,12 +1,11 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-// import Radium from 'radium';
 
 const cardStyles = { 
   position: "sticky",
   top: "375px",
-  zIndex: "1003",
+  zIndex: "1002",
   boxShadow: "0 2px 8px rgba(153, 153, 153, .4)",
   lineHeight: "18.4px",
   display: "block",

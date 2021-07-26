@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Radium from 'radium';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import UpwardIcon from '../../../assets/SVG/line-chart.svg';
+import UpwardIcon from "../../../assets/SVG/line-chart.svg";
 
 const cardStyles = { 
   position: "sticky",
-  top: "40px",
+  top: "48px",
   zIndex: "1003",
   boxShadow: "0 2px 8px rgba(153, 153, 153, .4)",
   lineHeight: "18.4px",
@@ -178,6 +178,22 @@ const cardFooterStyles = {
 
 
 const Reservations = () => {
+  const [formData, setFormData] = useState({
+    partySize: "",
+    date: "",
+    timeSlot: ""
+  });
+  
+  const {
+    partySize,
+    date,
+    timeSlot
+  } = formData;
+  
+  const onChange = e =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  
+
   const randomBookedTotalString = (num) => {
     const number = Math.floor(Math.random() * Math.floor(num));
     return `Booked ${number} times today`;
@@ -193,33 +209,32 @@ const Reservations = () => {
       <Card.Body as="div" style={cardBodyStyles}>
         <div style={reservationFormStyles}>
           <Form.Group controlId="reservationForm.ControlSelectPartySize" style={formRowStylesA}>
-            {/* <button style={expandedStyles} role="button" aria-expanded="true" tabIndex="0" aria-hidden="true"></button> */}
             <Form.Label as="div" id="party-size-label" style={controlLabelStyles}>Party Size</Form.Label>
-            <Button as="select" placeholder="For 2" style={controlSelectStylesA} aria-labelledby="party-size-label" block>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-              <option>11</option>
-              <option>12</option>
+            <Button as="select" placeholder="For 2" name='partySize' value={partySize} onChange={e => onChange(e)} style={controlSelectStylesA} aria-labelledby="party-size-label" block>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
             </Button>
           </Form.Group>
 
           <Form.Group controlId="reservationForm.ControlSelectDate" style={formRowStylesB}>
             <div style={formColumnStyles}>
               <Form.Label as="div" style={{ display: "block", fontSize: "14px", fontWeight: "500", lineHeight: "16px", paddingBottom: "4px" }}>Date</Form.Label>
-              <Button as="select" placeholder="Today" style={controlSelectStylesA} block>
+              <Button as="select" placeholder="Today" style={controlSelectStylesA} name="date" value={date} onChange={e => onChange(e)} block>
                 <option>Today</option>
               </Button>
             </div>   
             <div style={formColumnStyles}>
               <Form.Label as="div" style={controlLabelStyles}>Time</Form.Label>
-              <Button as="select" placeholder="4:00 PM" style={controlSelectStylesB} block>
+              <Button as="select" placeholder="4:00 PM" name="timeSlot" value={timeSlot} onChange={e => onChange(e)} style={controlSelectStylesB} block>
                 <option>11:00 AM</option>
                 <option>12:00 PM</option>
                 <option>1:00 PM</option>

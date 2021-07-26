@@ -1,5 +1,5 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 var SRC_DIR = path.join(__dirname, "/client/src");
 
 module.exports = {
@@ -33,13 +33,13 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx"],
+     extensions: ["*", ".js", ".jsx"],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
       title: "Restaurant Info Page",
-      inject: "body"
+      inject: "body",
     }),
-  ]
+  ],
 };

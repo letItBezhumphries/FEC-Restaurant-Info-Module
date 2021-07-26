@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import Tabs from "./tabs";
+import NavTabs from "./navTabs";
 
 const restaurantNavbar = () => {  
   return (
-    <Tabs>
-      <div label="Overview" href="#overview" eventKey="1">Overview</div>
-      <div label="Photos" href="#photos" eventKey="2">Photos</div>
-      <div label="Popular dishes" href="#popular" eventKey="3">Popular dishes</div>
-      <div label="Menu" href="#menu" eventKey="4">Menu</div>
-      <div label="Reviews" href="#reviews" eventKey="5">Reviews</div>   
-    </Tabs>
+    <NavTabs>
+      <div label="Overview" href="#overview" eventkey="1">Overview</div>
+      <div label="Photos" href="#photos" eventkey="2">Photos</div>
+      <div label="Popular dishes" href="#popular" eventkey="3">Popular dishes</div>
+      <div label="Menu" href="#menu" eventkey="4">Menu</div>
+      <div label="Reviews" href="#reviews" eventkey="5">Reviews</div>   
+    </NavTabs>
   )
 }
 

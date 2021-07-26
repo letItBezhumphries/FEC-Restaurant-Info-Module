@@ -104,7 +104,6 @@ class Eatery extends Component {
           })
       )
       .then((res) => {
-        console.log('from the reviews:', res.data);
         var totalRev = res.data.length;
         var revText = "";
         if (totalRev === 0) {
@@ -186,6 +185,7 @@ class Eatery extends Component {
       display: "flex",
       justifyContent: "space-between",
       zIndex: "100",
+      // backgroundColor: "lightblue"
     };
 
     const restaurantPageStyles = {
@@ -194,6 +194,8 @@ class Eatery extends Component {
       marginLeft: "7.5rem",
       marginRight: "7.5rem",
       backgroundColor: "#fff",
+      // backgroundColor: "lightgreen",
+      backgroundAttachment: "scroll",
     };
 
     const venueColumnStyles = {
@@ -201,15 +203,19 @@ class Eatery extends Component {
       marginRight: "7.5rem",
     };
 
-    const eateryContainerStyles = {
-      width: "100%vw",
+    const headerContainerStyles = {
+      padding: "0 0", 
+      margin: "0 0", 
+      width: "100%", 
       overflowX: "hidden"
     }
 
     return (
-      <Container fluid="true" style={eateryContainerStyles}>
-        <Header />
-        { !this.state.ID.length ? <Spinner /> : <PhotoHeading className="position-relative" /> }
+      <Container fluid="true">
+        <Container fluid="true" style={headerContainerStyles}>
+          <Header />
+          { !this.state.ID.length ? <Spinner /> : <PhotoHeading className="position-relative" /> }         
+        </Container>
         <Container style={mainPageStyles} fluid="true">
           <Container style={restaurantPageStyles}>
             <RestaurantNavbar />
