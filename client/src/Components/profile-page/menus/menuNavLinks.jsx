@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-import MenuNavLink from "./menuNavLink";
+import MenuNavLink from './menuNavLink';
 import Nav from 'react-bootstrap/Nav';
 
 const MenuNavLinks = ({ children }) => {
@@ -10,30 +11,30 @@ const MenuNavLinks = ({ children }) => {
   };
 
   const menuNavBarStyles = {
-    width: "100%",
-    display: "flex",
-    justifyContent: "space-between",
-    marginTop: '16px',
-  }
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'space-between',
+    marginTop: '16px'
+  };
 
   return (
     <Nav style={menuNavBarStyles} variant="pills" defaultActiveKey="Dinner">
       {children.map((child) => {
-          const { label } = child.props;
-          return (
-            <Nav.Item key={label}>
-              <MenuNavLink activeMenu={activeLink} eventKey={label} label={label} onClick={onClickTabItem} />
-            </Nav.Item>
-          );
+        const { label } = child.props;
+        return (
+          <Nav.Item key={label}>
+            <MenuNavLink activeMenu={activeLink} eventKey={label} label={label} onClick={onClickTabItem} />
+          </Nav.Item>
+        );
+      })}
+      <div className="tab-content">
+        {children.map((child) => {
+          if (child.props.label !== activeLink) return undefined;
+          return null;
         })}
-        <div className="tab-content">
-          {children.map((child) => {
-            if (child.props.label !== activeLink) return undefined;
-            return null;
-          })}
-        </div>
+      </div>
     </Nav>
-  )
-}
+  );
+};
 
 export default MenuNavLinks;

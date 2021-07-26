@@ -1,39 +1,40 @@
-import React, { Fragment } from 'react';
+/* eslint-disable react/prop-types */
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const Menu = ({ menu, title }) => {
   const menuContentStyles = {
-    display: "flex", 
-    flexDirection: "column", 
+    display: 'flex',
+    flexDirection: 'column'
   };
 
   const columnStyles = {
-    breakInside: "avoid",
-    lineHeight: "20px",
-    fontSize: "14px",
-    marginBottom: "16px"
+    breakInside: 'avoid',
+    lineHeight: '20px',
+    fontSize: '14px',
+    marginBottom: '16px'
   };
 
-  const itemHeadingStyles = { 
-    display: "flex", 
-    justifyContent: "space-between",
-    fontSize: "14px",
-    lineHeight: "20px",
-    fontWeight: "500"
+  const itemHeadingStyles = {
+    display: 'flex',
+    justifyContent: 'space-between',
+    fontSize: '14px',
+    lineHeight: '20px',
+    fontWeight: '500'
   };
 
   const itemDescriptionStyles = {
-    fontSize: "14px",
-    fontWeight: "400",
-    lineHeight: "20px"
-  }
+    fontSize: '14px',
+    fontWeight: '400',
+    lineHeight: '20px'
+  };
 
   return (
     <Container style={menuContentStyles}>
-      <div style={{ marginBottom: "16px" }}>
-        <h4 style={{ fontSize: "16px", lineHeight: "24px", fontWeight: "600"}}>{title}</h4>
+      <div style={{ marginBottom: '16px' }}>
+        <h4 style={{ fontSize: '16px', lineHeight: '24px', fontWeight: '600' }}>{title}</h4>
       </div>
       <Row>
         <Col style={columnStyles}>
@@ -84,7 +85,7 @@ const Menu = ({ menu, title }) => {
         </Col>
       </Row>
     </Container>
-  )
-}
+  );
+};
 
 export default Menu;

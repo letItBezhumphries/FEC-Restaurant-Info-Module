@@ -1,32 +1,33 @@
-import React, { useState } from "react";
-import DatePicker from "react-datepicker";
-import Form from "react-bootstrap/Form";
-import FormControl from "react-bootstrap/FormControl";
-import InputGroup from "react-bootstrap/InputGroup";
-import Button from "react-bootstrap/Button";
-import CloseIcon from "../../../../assets/SVG/close.svg";
-import Calender from "../../../../assets/SVG/calendar_today.svg";
-import Person from "../../../../assets/SVG/user.svg";
-import Clock from "../../../../assets/SVG/access_time.svg";
-import SearchIcon from "../../../../assets/SVG/magnifying-glass.svg";
-import SelectIcon from "../../../../assets/SVG/chevron-small-down.svg";
-import "react-datepicker/dist/react-datepicker.css";
-import "./restaurantSearchForm.css";
+/* eslint-disable react/prop-types */
+import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import Form from 'react-bootstrap/Form';
+import FormControl from 'react-bootstrap/FormControl';
+import InputGroup from 'react-bootstrap/InputGroup';
+import Button from 'react-bootstrap/Button';
+import CloseIcon from '../../../../assets/SVG/close.svg';
+import Calender from '../../../../assets/SVG/calendar_today.svg';
+import Person from '../../../../assets/SVG/user.svg';
+import Clock from '../../../../assets/SVG/access_time.svg';
+import SearchIcon from '../../../../assets/SVG/magnifying-glass.svg';
+import SelectIcon from '../../../../assets/SVG/chevron-small-down.svg';
+import 'react-datepicker/dist/react-datepicker.css';
+import './restaurantSearchForm.css';
 
 const RestaurantSearchForm = ({ closeSearch }) => {
   const [startDate, setStartDate] = useState(new Date());
   const [formData, setFormData] = useState({
-    partySize: "",
-    date: "",
-    timeSlot: "",
-    searchTerm: "",
+    partySize: '',
+    date: '',
+    timeSlot: '',
+    searchTerm: ''
   });
 
   const { partySize, date, timeSlot, searchTerm } = formData;
-  var day = String(startDate.getDate()).padStart(2, "0");
-  var month = String(startDate).split(" ")[1];
-  var year = startDate.getFullYear();
-  var currentDate = `${month} ${day}, ${year}`;
+  const day = String(startDate.getDate()).padStart(2, '0');
+  const month = String(startDate).split(' ')[1];
+  const year = startDate.getFullYear();
+  const currentDate = `${month} ${day}, ${year}`;
 
   const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -34,7 +35,7 @@ const RestaurantSearchForm = ({ closeSearch }) => {
     <div className="restaurant-searchform-container">
       <div className="close-btn-box">
         <div className="icon-box" onClick={closeSearch}>
-          <CloseIcon style={{ height: "20px", width: "20px", fill: "rgba(0,0,0,0.6)" }} />
+          <CloseIcon style={{ height: '20px', width: '20px', fill: 'rgba(0,0,0,0.6)' }} />
         </div>
       </div>
       <div className="searchform-header-box">
@@ -46,7 +47,7 @@ const RestaurantSearchForm = ({ closeSearch }) => {
             <div className="selector-box party-size-picker">
               <Form.Group controlId="reservationSearchForm.ControlSelectPartySize" className="dtp-selector">
                 <div className="form-selector-icon-box">
-                  <Person style={{ height: "24px", width: "24px", fill: "rgba(0,0,0,0.8)" }} />
+                  <Person style={{ height: '24px', width: '24px', fill: 'rgba(0,0,0,0.8)' }} />
                 </div>
                 <Button as="select" name="partySize" value={partySize} onChange={(e) => onChange(e)} aria-labelledby="party-size-label" className="selector-btn" block>
                   <option value="1">1 person</option>
@@ -70,18 +71,18 @@ const RestaurantSearchForm = ({ closeSearch }) => {
             <div className="selector-box date-picker">
               <Form.Group controlId="reservationSearchForm.ControlSelectDayOfReservation" className="dtp-selector">
                 <div className="form-selector-icon-box">
-                  <Calender style={{ height: "24px", width: "24px", fill: "rgba(0,0,0,0.8)" }} />
+                  <Calender style={{ height: '24px', width: '24px', fill: 'rgba(0,0,0,0.8)' }} />
                 </div>
                 <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} className="selector-btn date" name="date" value={date} placeholderText={currentDate} />
                 <div className="icon-box">
-                  <SelectIcon style={{ height: "18px", width: "18px", fill: "rgba(0,0,0,0.8)" }} />
+                  <SelectIcon style={{ height: '18px', width: '18px', fill: 'rgba(0,0,0,0.8)' }} />
                 </div>
               </Form.Group>
             </div>
             <div className="selector-box time-picker">
               <Form.Group controlId="reservationSearchForm.ControlSelectTimeOfReservation" className="dtp-selector">
                 <div className="form-selector-icon-box">
-                  <Clock style={{ height: "24px", width: "24px", fill: "rgba(0,0,0,0.8)" }} />
+                  <Clock style={{ height: '24px', width: '24px', fill: 'rgba(0,0,0,0.8)' }} />
                 </div>
                 <Button as="select" name="timeSlot" value={timeSlot} onChange={(e) => onChange(e)} aria-labelledby="reservation-time-label" className="selector-btn" block>
                   <option value="11:00 AM">11:00 AM</option>
@@ -103,7 +104,7 @@ const RestaurantSearchForm = ({ closeSearch }) => {
           <InputGroup className="dtp-search-input">
             <InputGroup.Prepend>
               <div className="form-selector-icon-box">
-                <SearchIcon style={{ height: "24px", width: "24px", fill: "rgba(0,0,0,0.8)" }} />
+                <SearchIcon style={{ height: '24px', width: '24px', fill: 'rgba(0,0,0,0.8)' }} />
               </div>
             </InputGroup.Prepend>
             <FormControl

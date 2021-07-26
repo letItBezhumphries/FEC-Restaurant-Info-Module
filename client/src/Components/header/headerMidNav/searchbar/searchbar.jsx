@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
-import ButtonToolbar from "react-bootstrap/ButtonToolbar";
-import Button from "react-bootstrap/Button";
-import SearchIcon from "../../../../assets/search.jpg";
-import "./searchbar.css";
-
+/* eslint-disable react/prop-types */
+import React from 'react';
+import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+import Button from 'react-bootstrap/Button';
+import SearchIcon from '../../../../assets/search.jpg';
+import './searchbar.css';
 
 const Searchbar = ({ showSearch }) => {
-
   return (
     <div className="mid-bar-search-navbar-right">
       <ButtonToolbar className="mid-bar-login-buttonbox">
@@ -18,10 +17,10 @@ const Searchbar = ({ showSearch }) => {
         </Button>
       </ButtonToolbar>
       <div className="mid-bar-search-buttonbox" onClick={showSearch}>
-        <img src={SearchIcon} href="/" height="25" width="25" className="p-2" alt="" style={{ marginLeft: "1rem" }} />
-      </div> 
+        <img src={SearchIcon} href="/" height="25" width="25" className="p-2" alt="" style={{ marginLeft: '1rem' }} />
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Searchbar;

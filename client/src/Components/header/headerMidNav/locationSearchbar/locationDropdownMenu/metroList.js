@@ -25,33 +25,12 @@ const metroList = [
   },
   {
     metroName: 'Baltimore Area',
-    regions: [
-      'All Baltimore / Maryland',
-      'Baltimore',
-      'Baltimore Suburbs',
-      'Ocean City / Delware Shore',
-      'Greater Annapolis',
-      'Eastern Shore',
-      'Western MD',
-      'Chambersburg'
-    ],
+    regions: ['All Baltimore / Maryland', 'Baltimore', 'Baltimore Suburbs', 'Ocean City / Delware Shore', 'Greater Annapolis', 'Eastern Shore', 'Western MD', 'Chambersburg'],
     eventKey: '2'
   },
   {
     metroName: 'Boston / New England',
-    regions: [
-      'All Boston / New England',
-      'Boston',
-      'Boston Suburbs',
-      'Central MA',
-      'Western MA',
-      'Southern MA',
-      'Cape Cod and the Islands',
-      'Maine',
-      'Rhode Island',
-      'Vermont',
-      'New Hampshire'
-    ],
+    regions: ['All Boston / New England', 'Boston', 'Boston Suburbs', 'Central MA', 'Western MA', 'Southern MA', 'Cape Cod and the Islands', 'Maine', 'Rhode Island', 'Vermont', 'New Hampshire'],
     eventKey: '3'
   },
   {
@@ -115,16 +94,7 @@ const metroList = [
   },
   {
     metroName: 'Detroit / Eastern Michigan',
-    regions: [
-      'All Detroit / Eastern Michigan',
-      'Detroit',
-      'Ann Arbor',
-      'Windsor ON',
-      'The Thumb',
-      'Saginaw',
-      'Jackson',
-      'Southeast Michigan'
-    ],
+    regions: ['All Detroit / Eastern Michigan', 'Detroit', 'Ann Arbor', 'Windsor ON', 'The Thumb', 'Saginaw', 'Jackson', 'Southeast Michigan'],
     eventKey: '7'
   },
   {
@@ -192,12 +162,7 @@ const metroList = [
   },
   {
     metroName: 'Miami / Southeast Florida',
-    regions: [
-      'All Miami / Southeast Florida',
-      'Miami - Dade County',
-      'Palm Beach County',
-      'Ft. Lauderdale - Broward County'
-    ],
+    regions: ['All Miami / Southeast Florida', 'Miami - Dade County', 'Palm Beach County', 'Ft. Lauderdale - Broward County'],
     eventKey: '11'
   },
   {
@@ -224,13 +189,7 @@ const metroList = [
   },
   {
     metroName: 'New Orleans / Louisiana',
-    regions: [
-      'All New Orleans / Louisiana',
-      'New Orleans',
-      'Houma',
-      'Leesville',
-      'Northshore'
-    ],
+    regions: ['All New Orleans / Louisiana', 'New Orleans', 'Houma', 'Leesville', 'Northshore'],
     eventKey: '13'
   },
   {
@@ -255,17 +214,7 @@ const metroList = [
   },
   {
     metroName: 'Orlando / Central Florida East',
-    regions: [
-      'All Orlando / Central Florida East',
-      'Orlando',
-      'Daytona Beach',
-      'Ocala / Gainesville',
-      'Space Coast',
-      'southeast',
-      'Eustis',
-      'Levy County',
-      'Okeechobee'
-    ],
+    regions: ['All Orlando / Central Florida East', 'Orlando', 'Daytona Beach', 'Ocala / Gainesville', 'Space Coast', 'southeast', 'Eustis', 'Levy County', 'Okeechobee'],
     eventKey: '15'
   },
   {
@@ -313,14 +262,7 @@ const metroList = [
   },
   {
     metroName: 'San Diego',
-    regions: [
-      'All San Diego',
-      'San Diego',
-      'North San Diego',
-      'Temecula / Wine County',
-      'East County',
-      'Cuyamacas'
-    ],
+    regions: ['All San Diego', 'San Diego', 'North San Diego', 'Temecula / Wine County', 'East County', 'Cuyamacas'],
     eventKey: '18'
   },
   {
@@ -371,22 +313,12 @@ const metroList = [
   },
   {
     metroName: 'Tuscon',
-    regions: [
-      'All Tucson',
-      'Sonoita',
-      'Southeast Arizona',
-      'Tucson'
-    ],
+    regions: ['All Tucson', 'Sonoita', 'Southeast Arizona', 'Tucson'],
     eventKey: '21'
   },
   {
     metroName: 'Washington DC',
-    regions: [
-      'All Washington D.C. Area',
-      'District of Columbia',
-      'Virginia - DC Suburbs',
-      'Maryland - DC Suburbs'
-    ],
+    regions: ['All Washington D.C. Area', 'District of Columbia', 'Virginia - DC Suburbs', 'Maryland - DC Suburbs'],
     eventKey: '22'
   }
 ];
