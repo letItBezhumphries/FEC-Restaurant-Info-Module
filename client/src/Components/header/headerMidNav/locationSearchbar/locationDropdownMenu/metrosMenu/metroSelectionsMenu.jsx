@@ -1,8 +1,7 @@
-/* eslint-disable react/prop-types */
-import React, { useState } from 'react';
-import Col from 'react-bootstrap/Col';
-import MetroSelector from './metroSelector';
-import './metroSelectionsMenu.css';
+import React, { useState } from "react";
+import Col from "react-bootstrap/Col";
+import MetroSelector from "./metroSelector";
+import "./metroSelectionsMenu.css";
 
 const MetroSelectionsMenu = ({ setRegionsMenu, onMetroClick, menuShowing, region, openMenu, children }) => {
   const [activeMetro, setActiveMetro] = useState(children[0].props.label);
@@ -18,7 +17,13 @@ const MetroSelectionsMenu = ({ setRegionsMenu, onMetroClick, menuShowing, region
       <div className="metros-list">
         {children.map((child, idx) => {
           const { metro, label, eventkey } = child.props;
-          return <MetroSelector activeMetro={activeMetro} key={idx} eventkey={eventkey} label={label} metro={metro} onClick={onMetroSelectionClick} />;
+          return <MetroSelector 
+                    activeMetro={activeMetro} 
+                    key={idx} 
+                    eventkey={eventkey} 
+                    label={label} 
+                    metro={metro} 
+                    onClick={onMetroSelectionClick}  />;
         })}
         <div className="metro-regions">
           {children.map((child) => {

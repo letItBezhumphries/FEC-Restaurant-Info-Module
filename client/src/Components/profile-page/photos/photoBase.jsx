@@ -1,14 +1,14 @@
 /* eslint-disable linebreak-style */
-/* eslint-disable  react/display-name */
-import React, { useRef, useEffect } from 'react';
-import { mountPhotoGallery } from 'photogallery/PhotoGallery';
+import React, { useRef, useEffect } from "react";
+import { mountPhotoGallery } from "photogallery/PhotoGallery";
 
-export default () => {
+export default() => {
+
   const ref = useRef(null);
 
   useEffect(() => {
     mountPhotoGallery(ref.current);
   }, []);
 
-  return <div ref={ref} id="photos"></div>;
+  return <div ref={ref} id="photos"></div>
 };

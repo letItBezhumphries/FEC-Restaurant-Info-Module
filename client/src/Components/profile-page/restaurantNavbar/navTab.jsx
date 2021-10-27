@@ -1,9 +1,8 @@
-/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
-import './navTab.css';
+import "./navTab.css";
 
 const NavTab = ({ label, eventkey, activeTab, onClick, href }) => {
-  const [className, setClassName] = useState('navtab-link');
+  const [className, setClassName] = useState("navtab-link");
 
   const onTabClick = () => {
     onClick(label);
@@ -11,9 +10,9 @@ const NavTab = ({ label, eventkey, activeTab, onClick, href }) => {
 
   useEffect(() => {
     if (activeTab === label) {
-      setClassName((prev) => (prev += ' navtab-active'));
+      setClassName((prev) => (prev += " navtab-active"))
     } else {
-      setClassName('navtab-link');
+      setClassName("navtab-link")
     }
   }, [activeTab, label]);
 

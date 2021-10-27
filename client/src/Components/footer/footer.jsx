@@ -1,18 +1,27 @@
-import React from 'react';
-import Container from 'react-bootstrap/Container';
-import './footer.css';
+import React from "react";
+import Container from "react-bootstrap/Container";
+import "./footer.css";
 
-const Footer = () => (
-  <Container className="footer" fluid="true">
+
+const Footer = () => <Container className="footer" fluid="true">
     <div className="footerContainer">
       <div className="emailSectionContainer">
         <div className="footerEmailTitleContainer">
           <div className="footerEmailTitle">Become an Insider</div>
-          <div className="footerEmailSubtitle">Gain access to exclusive offers, best-of lists, local events & more (you can unsubscribe any time).</div>
+          <div className="footerEmailSubtitle">
+            Gain access to exclusive offers, best-of lists, local events & more
+            (you can unsubscribe any time).
+          </div>
         </div>
         <div className="inputAndButton bottomBorder">
           <div className="subscribeContainer">
-            <input className="subscribe" type="email" name="subscribe" id="subscribe" placeholder="Email" />
+            <input
+              className="subscribe"
+              type="email"
+              name="subscribe"
+              id="subscribe"
+              placeholder="Email"
+            />
           </div>
           <div className="subscribeButtonContainer">
             <button className="subscribeButton">Sign Up</button>
@@ -114,6 +123,6 @@ const Footer = () => (
       </div>
     </div>
   </Container>
-);
+
 
 export default Footer;

@@ -79,19 +79,19 @@
 }
 
 .party-size-picker {
-  order: 3;
-  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  order: 1;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
   padding: 0 8px;
 }
 
 .date-picker {
-  order: 1;
+  order: 2;
   background-color: cornsilk;
   padding: 0 0;
 }
 
 .time-picker {
-  order: 2;
+  order: 3;
   border-left: 1px solid rgba(0, 0, 0, 0.08);
   padding: 0 8px;
 }

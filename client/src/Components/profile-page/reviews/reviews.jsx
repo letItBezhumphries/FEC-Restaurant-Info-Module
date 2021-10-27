@@ -1,13 +1,13 @@
-/* eslint-disable react/display-name */
 import React, { useEffect, useRef } from 'react';
 import { mountReviewsModule } from 'reviews/ReviewsModule';
 
-export default () => {
+export default() => {
+  
   const ref = useRef(null);
 
   useEffect(() => {
     mountReviewsModule(ref.current);
   }, []);
 
-  return <div ref={ref} id="reviews"></div>;
-};
+  return <div ref={ref} id="reviews"></div>
+}

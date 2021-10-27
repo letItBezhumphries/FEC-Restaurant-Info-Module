@@ -1,29 +1,28 @@
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import NavTab from './navTab';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 
-const navbarStyle = {
-  position: 'sticky',
-  top: '40px',
-  zIndex: '1003',
-  height: '50px',
-  backgroundColor: '#fff',
-  paddingBottom: '0px',
-  paddingTop: '0px'
+const navbarStyle = { 
+  position: "sticky",
+  top: "40px",
+  zIndex: "1003",
+  height: "50px", 
+  backgroundColor: "#fff",
+  paddingBottom: "0px", 
+  paddingTop: "0px",
 };
 
-const navStyle = {
-  height: '100%',
-  width: '100%',
-  display: 'flex',
-  justifyContent: 'flex-start',
-  textAlign: 'left',
-  lineHeight: '20px',
-  fontSize: '12px',
-  fontWeight: '500',
-  borderBottom: '1.1111px solid rgb(216, 217, 219)'
+const navStyle = { 
+  height: "100%", 
+  width: "100%", 
+  display: "flex",
+  justifyContent: "flex-start", 
+  textAlign: "left", 
+  lineHeight: "20px", 
+  fontSize: "12px", 
+  fontWeight: "500",
+  borderBottom: "1.1111px solid rgb(216, 217, 219)",
 };
 
 const NavTabs = ({ onTabClick, children }) => {
@@ -49,7 +48,7 @@ const NavTabs = ({ onTabClick, children }) => {
           })}
         </div>
       </Nav>
-    </Navbar>
+    </Navbar>   
   );
 };
 
